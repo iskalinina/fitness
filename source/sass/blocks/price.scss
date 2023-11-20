@@ -1,0 +1,242 @@
+.price {
+  background-color: #f8f9fc;
+  padding: 126px 0 120px;
+  position: relative;
+
+  @include vp-1365 {
+    padding: 100px 0;
+  }
+
+  @include vp-767 {
+    padding: 73px 0 70px;
+  }
+}
+
+.price__heading {
+  @include text(54px, 54px, $ff-semibold);
+
+  letter-spacing: 1.62px;
+  font-family: $ff-alumni;
+  text-align: center;
+  color: #102654;
+  margin: 0 0 34px;
+
+  @include vp-1365 {
+    @include text(42px, 42px, $ff-semibold);
+
+    letter-spacing: 1.26px;
+    margin-bottom: 37px;
+  }
+
+  @include vp-767 {
+    @include text(32px, 32px, $ff-semibold);
+
+    letter-spacing: 0.96px;
+    margin-bottom: 22px;
+  }
+}
+
+.price__controls {
+  width: max-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  position: relative;
+  margin-bottom: 36px;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: rgba(120, 120, 120, 0.2);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  @include vp-1365 {
+    gap: 54px;
+    margin-bottom: 44px;
+  }
+
+  @include vp-767 {
+    gap: 45px;
+    margin-bottom: 34px;
+  }
+}
+
+.price__element {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 10px;
+
+  @include vp-1365 {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @include vp-767 {
+    gap: 35px;
+  }
+}
+
+.price__element-item {
+  width: calc((100% - 80px) / 3);
+  padding: 60px 0 58px;
+  background-color: $color-default-white;
+  border: 7px solid transparent;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    border-image: linear-gradient(to bottom right, #d10a42, #00359f) 1;
+  }
+
+  @include vp-1365 {
+    min-width: 440px;
+    margin: 0 auto;
+  }
+
+  @include vp-767 {
+    min-width: 100%;
+    padding: 45px 0 43px;
+
+    &:hover,
+    &:focus {
+      padding-bottom: 43px;
+    }
+  }
+}
+
+.price__subheading {
+  @include text(26px, 26px, $ff-bold);
+
+  color: $color-dark-primary;
+  text-align: center;
+  margin: 0 0 7px;
+
+  @include vp-1365 {
+    @include text(24px, 24px, $ff-bold);
+
+    margin-bottom: 13px;
+  }
+
+  @include vp-767 {
+    @include text(22px, 22px, $ff-bold);
+
+    margin-bottom: 13px;
+  }
+}
+
+.price__description {
+  @include text(16px, 24px, $ff-light);
+
+  color: $color-dark-primary;
+  text-align: center;
+  margin: 0 0 68px;
+
+  @include vp-1365 {
+    margin-bottom: 76px;
+  }
+
+  @include vp-767 {
+    @include text(14px, 22px, $ff-light);
+
+    margin-bottom: 65px;
+  }
+}
+
+.price__cost {
+  @include text(60px, 90px, $ff-bold);
+
+  color: $color-light-primary;
+  text-align: center;
+  margin: 0 0 35px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    @include text(100px, 150px, $ff-bold);
+
+    content: attr(data-cost);
+    color: #e8e8e8;
+    opacity: 0.48;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  @include vp-1365 {
+    margin-bottom: 23px;
+  }
+
+  @include vp-767 {
+    @include text(48px, 72px, $ff-bold);
+
+    margin-bottom: 22px;
+
+    &::before {
+      @include text(80px, 120px, $ff-bold);
+    }
+  }
+}
+
+.price__cost svg {
+  @include vp-767 {
+    width: 24px;
+    height: 33px;
+  }
+}
+
+.price__button {
+  display: block;
+  width: 205px;
+  padding: 27px 0;
+  text-align: center;
+  margin: 0 auto;
+  outline: 2px solid $color-dark-primary;
+  outline-offset: -2px;
+
+  @include vp-1365 {
+    padding: 23px 0 21px;
+    font-weight: $ff-bold;
+  }
+
+  @include vp-767 {
+    font-weight: $ff-bold;
+  }
+}
+
+.price__element-item:hover .price__button,
+.price__element-item:focus .price__button,
+.price__element-item.is-active .price__button {
+  background: linear-gradient(97deg, #ed0233 17.6%, #003eb7 95.31%);
+  color: $color-default-white;
+  outline: 2px solid transparent;
+
+  @include vp-1365 {
+    padding: 22px 0;
+  }
+}
+
+.price__decorations {
+  position: absolute;
+  bottom: -144px;
+  right: 0;
+
+  @include vp-1365 {
+    bottom: -147px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}

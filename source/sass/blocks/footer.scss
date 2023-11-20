@@ -1,0 +1,408 @@
+.footer__content {
+  display: flex;
+
+  @include vp-1365 {
+    flex-direction: column;
+  }
+}
+
+.footer__free {
+  background-color: $color-dark-primary;
+  color: $color-default-white;
+  padding: 60px 103px;
+  width: 50%;
+
+  @include vp-1365 {
+    padding: 100px 133px 99px;
+    width: 100%;
+  }
+
+  @include vp-767 {
+    padding: 70px 15px;
+  }
+}
+
+.footer__heading {
+  @include text(54px, 54px, $ff-semibold);
+
+  font-family: $ff-alumni;
+  letter-spacing: 1.62px;
+  color: $color-dark-primary;
+  margin: 0 0 40px;
+
+  @include vp-1365 {
+    @include text(42px, 42px, $ff-bold);
+
+    letter-spacing: 1.26px;
+    margin-bottom: 41px;
+  }
+
+  @include vp-767 {
+    @include text(32px, 32px, $ff-semibold);
+
+    letter-spacing: 0.96px;
+    margin-bottom: 38px;
+  }
+
+  &--ondark {
+    color: $color-default-white;
+    margin-bottom: 23px;
+
+    @include vp-1365 {
+      @include text(42px, 42px, $ff-semibold);
+
+      margin-bottom: 23px;
+    }
+
+    @include vp-767 {
+      @include text(32px, 32px, $ff-semibold);
+
+      letter-spacing: 0.96px;
+      margin-bottom: 28px;
+    }
+  }
+}
+
+.footer__free form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 410px;
+
+  @include vp-1365 {
+    max-width: 502px;
+  }
+}
+
+.footer__input {
+  position: relative;
+  width: calc((100% - 30px) / 2);
+
+  @include vp-1365 {
+    width: calc((100% - 59px) / 2);
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.footer__input .input-message {
+  @include text(14px, 22px);
+
+  color: #ff1553;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+
+  @include vp-767 {
+    bottom: 4px;
+  }
+}
+
+.footer__free input {
+  @include text(14px, 22px);
+
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #74819c;
+  background-color: transparent;
+  color: $color-default-white;
+  padding: 11px 0 3px;
+  margin: 0 0 37px;
+
+  &::placeholder {
+    color: $color-default-white;
+  }
+
+  @include vp-1365 {
+    @include text(16px, 24px, $ff-light);
+
+    padding: 11px 0 4px;
+    margin-bottom: 27px;
+  }
+
+  @include vp-767 {
+    @include text(14px, 22px, $ff-light);
+
+    margin-bottom: 23px;
+    padding: 12px 0 4px;
+  }
+
+  &:hover {
+    border-color: $color-default-white;
+  }
+
+  &:focus {
+    border-color: $color-transparent;
+    outline: 1px solid $color-default-white;
+    outline-offset: 1px;
+  }
+}
+
+.footer__form-button {
+  @include text(12px, 12px, $ff-bold);
+
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 27px 0;
+  border: none;
+  outline: 2px solid $color-default-white;
+  outline-offset: -2px;
+  display: block;
+  text-align: center;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @include vp-1365 {
+    padding: 22px 0;
+    font-weight: $ff-bold;
+  }
+
+  @include vp-767 {
+    margin-top: 15px;
+  }
+}
+
+.footer__contacts {
+  width: 50%;
+  padding: 60px 0 64px 120px;
+  border-top: 1px solid #74819c;
+
+  @include vp-1365 {
+    width: 100%;
+    padding: 104px 133px 100px;
+    border: none;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    padding: 66px 15px 70px;
+  }
+}
+
+.footer__contacts-wrapper {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 120px;
+  position: relative;
+
+  @include vp-1365 {
+    gap: 29px 141px;
+  }
+
+  @include vp-767 {
+    gap: 28px 141px;
+  }
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 117px;
+    background-color: #74819c;
+    position: absolute;
+    top: 0;
+    left: 220px;
+
+    @include vp-1365 {
+      left: 251px;
+      height: 137px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+}
+
+.footer__contacts-item {
+  min-width: 170px;
+
+  @include vp-767 {
+    &--schedule {
+      order: 1;
+    }
+
+    &--phone {
+      order: 2;
+    }
+
+    &--email {
+      order: 3;
+    }
+  }
+}
+
+.footer__contacts-title {
+  @include text(24px, 24px);
+
+  color: $color-dark-primary;
+  margin: 0 0 5px;
+
+  @include vp-1365 {
+    @include text(22px, 22px);
+
+    margin-bottom: 11px;
+  }
+
+  @include vp-767 {
+    @include text(20px, 20px);
+
+    margin-bottom: 12px;
+  }
+}
+
+.footer__contacts-text {
+  @include text(14px, 22px);
+
+  color: $color-dark-primary;
+  margin: 0;
+
+  @include vp-767 {
+    line-height: 20px;
+  }
+}
+
+.footer__links {
+  background-color: #030a1a;
+  padding: 39px 0 40px;
+
+  @include vp-1365 {
+    padding: 45px 0;
+  }
+
+  @include vp-767 {
+    padding: 29px 0 45px;
+  }
+}
+
+.footer__links .container {
+  display: flex;
+  align-items: center;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.footer__logo {
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 257px;
+
+  @include vp-1365 {
+    margin-right: 44px;
+  }
+
+  @include vp-767 {
+    align-self: flex-start;
+    margin: 0 0 30px;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  @include vp-1365 {
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    gap: 18px 35px;
+    margin-bottom: 53px;
+  }
+}
+
+.footer__link {
+  @include text(14px, 22px);
+
+  display: block;
+  color: $color-default-white;
+  padding-right: 1px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $color-default-white;
+    display: none;
+  }
+
+  &:hover::before {
+    display: block;
+  }
+
+  &:focus::before {
+    display: block;
+    bottom: initial;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 20px);
+    height: 32px;
+    border: 1px solid $color-default-white;
+    background-color: transparent;
+  }
+
+  &:active::before {
+    display: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.4;
+  }
+}
+
+.footer__socials {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+
+  @include vp-767 {
+    align-self: center;
+    margin: 0 auto;
+  }
+}
+
+.footer__socials-link {
+  width: 25px;
+  height: 25px;
+  background-color: $color-default-white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &:hover,
+  &:focus {
+    background-color: $color-light-primary;
+  }
+
+  &:active {
+    background-color: $color-dark-primary;
+  }
+}
+
+.footer__socials-link:hover svg,
+.footer__socials-link:focus svg {
+  color: $color-default-white;
+}

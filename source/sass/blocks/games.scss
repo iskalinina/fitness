@@ -1,0 +1,393 @@
+.games {
+  border-color: $color-default-white;
+  padding: 120px 0;
+
+  @include vp-1365 {
+    padding: 100px 0;
+  }
+
+  @include vp-767 {
+    padding: 70px 0;
+  }
+}
+
+.games__container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 120px;
+
+  @include vp-1365 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    margin-bottom: 70px;
+  }
+}
+
+.games__image {
+  background-color: $color-dark-primary;
+}
+
+.games__description {
+  background-color: $color-red-banners;
+  padding: 80px;
+
+  @include vp-1365 {
+    padding: 40px 45px 45px;
+  }
+
+  @include vp-767 {
+    padding: 40px;
+  }
+}
+
+.games__wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 42px;
+
+  @include vp-1365 {
+    margin-bottom: 22px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 21px;
+  }
+}
+
+.games__heading {
+  @include text(82px, 76px, $ff-semibold);
+
+  font-family: $ff-alumni;
+  letter-spacing: 2.46px;
+  text-transform: uppercase;
+  color: $color-default-white;
+  margin: 0 68px 0 0;
+  width: min-content;
+
+  @include vp-1365 {
+    @include text(48px, 46px, $ff-semibold);
+
+    letter-spacing: 1.44px;
+    margin-right: 41px;
+  }
+
+  @include vp-767 {
+    margin-right: 49px;
+  }
+}
+
+.games__info-item {
+  @include text(18px, 24px, $ff-light);
+
+  color: $color-default-white;
+  width: min-content;
+  margin: 0;
+  position: relative;
+
+  @include vp-767 {
+    @include text(16px, 20px, $ff-light);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 72px;
+
+    @include vp-1365 {
+      margin-bottom: 34px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 33px;
+    }
+  }
+
+  &::before {
+    content: "";
+    height: 1px;
+    background-color: $color-default-white;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+
+    @include vp-1365 {
+      bottom: 0;
+    }
+  }
+
+  &--date::before {
+    width: 64px;
+
+    @include vp-1365 {
+      width: 42px;
+    }
+  }
+
+  &--time::before {
+    width: 92px;
+
+    @include vp-1365 {
+      width: 56px;
+    }
+  }
+
+  &::after {
+    @include text(40px, 40px, $ff-bold);
+
+    position: absolute;
+    bottom: -52px;
+    left: 0;
+
+    @include vp-1365 {
+      @include text(24px,24px, $ff-bold);
+
+      bottom: -26px;
+    }
+
+    @include vp-767 {
+      bottom: -27px;
+    }
+  }
+
+  &--date::after {
+    content: "7";
+  }
+
+  &--time::after {
+    content: "12:00";
+  }
+}
+
+.games__info-item span {
+  @include text(14px, 17px);
+
+  position: absolute;
+  top: 40px;
+  left: 28px;
+
+  @include vp-1365 {
+    @include text(10px, 10px);
+
+    top: 27px;
+    left: 16px;
+  }
+
+  @include vp-767 {
+    top: 25px;
+  }
+}
+
+.games__text {
+  @include text(18px, 24px, $ff-light);
+
+  color: $color-default-white;
+  margin-bottom: 56px;
+
+  @include vp-1365 {
+    max-width: 202px;
+    margin-bottom: 21px;
+  }
+
+  @include vp-767 {
+    @include text(16px, 20px, $ff-light);
+
+    margin-bottom: 20px;
+  }
+}
+
+.games__button {
+  display: block;
+  text-align: center;
+  width: 340px;
+  padding: 27px 0;
+
+  @include vp-1365 {
+    width: 202px;
+    padding: 22px 0;
+  }
+
+  @include vp-767 {
+    width: 210px;
+    font-weight: $ff-bold;
+  }
+}
+
+.games__jury-heading {
+  @include text(54px, 54px, $ff-semibold);
+
+  font-family: $ff-alumni;
+  letter-spacing: 1.62px;
+  color: $color-dark-primary;
+  margin: 0 0 45px;
+
+  @include vp-1365 {
+    @include text(42px, 42px, $ff-semibold);
+
+    letter-spacing: 1.26px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    @include text(32px, 32px, $ff-semibold);
+
+    letter-spacing: 0.96px;
+    margin-bottom: 42px;
+  }
+}
+
+.games__jury-wrapper {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+
+  @include vp-1365 {
+    max-width: 568px;
+  }
+
+  @include vp-767 {
+    max-width: 226px;
+  }
+}
+
+.games__jury {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.games__jury-item {
+  background-color: #787a78;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+
+  &:hover .games__jury-info,
+  &:focus .games__jury-info {
+    display: block;
+  }
+
+  &:hover .games__jury-title,
+  &:focus .games__jury-title {
+    display: none;
+  }
+}
+
+.games__jury-title {
+  @include text(22px, 22px);
+
+  color: $color-default-white;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include vp-1365 {
+    @include text(20px, 20px);
+  }
+
+  @include vp-767 {
+    @include text(22px, 22px);
+  }
+}
+
+.games__jury-info {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba($color-dark-primary, 0.89);
+}
+
+.games__controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.games__control svg {
+  color: $color-dark-primary;
+
+  @include vp-767 {
+    width: 10px;
+    height: 19px;
+  }
+}
+
+.games__control {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid $color-transparent;
+  background-color: $color-transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include vp-767 {
+    width: 45px;
+    height: 45px;
+  }
+
+  &--prev {
+    left: -75px;
+
+    @include vp-767 {
+      left: -47px;
+    }
+  }
+
+  &--next {
+    transform: translateY(-50%) rotate(180deg);
+    right: -75px;
+
+    @include vp-767 {
+      right: -47px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $color-dark-primary;
+  }
+
+  &:active {
+    border: 1px solid $color-dark-primary;
+    background-color: $color-dark-primary;
+  }
+
+  &:active svg {
+    color: $color-default-white;
+  }
+}
+
+.games__jury-item picture {
+  display: flex;
+}
+
+.games__jury-item img {
+  object-fit: cover;
+}
+
+.games__image img {
+  object-fit: cover;
+  width: 100%;
+}

@@ -1,0 +1,249 @@
+.about {
+  padding: 120px 0 235px;
+
+  @include vp-1365 {
+    padding: 100px 0 183px;
+  }
+
+  @include vp-767 {
+    padding: 70px 0 237px;
+  }
+}
+
+.about__text {
+  max-width: 355px;
+  margin: -5px 145px 0 0;
+
+  @include vp-1365 {
+    margin: 0;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  @include vp-767 {
+    margin: 0;
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+.about__text h2 {
+  @include text(54px, 54px, $ff-semibold);
+
+  letter-spacing: 1.62px;
+  font-family: $ff-alumni;
+  color: $color-dark-primary;
+  margin: 0 0 28px;
+
+  @include vp-1365 {
+    @include text(42px, 42px, $ff-semibold);
+
+    letter-spacing: 1.26px;
+    margin: 0 0 20px;
+  }
+
+  @include vp-767 {
+    @include text(32px, 32px, $ff-semibold);
+
+    letter-spacing: 0.96px;
+    margin: 0 0 13px;
+  }
+}
+
+.about__text h3 {
+  @include text(22px, 22px);
+
+  color: $color-dark-primary;
+  margin: 0 0 93px;
+
+  @include vp-1365 {
+    @include text(20px, 20px);
+
+    margin: 0 0 33px -5px;
+  }
+
+  @include vp-767 {
+    @include text(18px, 20px);
+
+    margin: 0 0 38px;
+  }
+}
+
+.about__text p {
+  @include text(16px, 24px, $ff-light);
+
+  color: $color-dark-primary;
+  margin: 0 0 8px;
+
+  @include vp-1365 {
+    max-width: 502px;
+    margin-bottom: 39px;
+  }
+
+  @include vp-767 {
+    @include text(14px, 22px, $ff-light);
+
+    margin-bottom: 52px;
+  }
+}
+
+.about__text p:not(:first-of-type) {
+  @include vp-1365 {
+    display: none;
+  }
+}
+
+.about__container {
+  display: flex;
+  flex-direction: row;
+
+  @include vp-1365 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.about__media {
+  position: relative;
+
+  @include vp-767 {
+    width: 100vw;
+  }
+}
+
+.about__image {
+  background-color: $color-grey;
+
+  @include vp-767 {
+    margin-bottom: 40px;
+  }
+}
+
+.about__image img {
+  object-fit: cover;
+  width: 100%;
+
+  @include vp-1365 {
+    max-height: 345px;
+  }
+
+  @include vp-767 {
+    max-height: 313px;
+  }
+}
+
+.about__video {
+  width: 364px;
+  height: 228px;
+  position: absolute;
+  bottom: -114px;
+  left: -63px;
+  background-color: rgba(20, 54, 122, 0.5);
+
+  @include vp-1365 {
+    width: 266px;
+    height: 167px;
+    bottom: -83px;
+    left: 206px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    top: 353px;
+    left: initial;
+    bottom: initial;
+  }
+}
+
+.about__video-poster {
+  width: 100%;
+  object-fit: cover;
+
+  @include vp-1365 {
+    max-height: 167px;
+  }
+}
+
+.about__play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(97deg, #ed0233 17.6%, #003eb7 95.31%);
+  z-index: 8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  transition: all $trans-default;
+
+  @include vp-1365 {
+    width: 52px;
+    height: 52px;
+  }
+
+  &::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $color-transparent;
+    border: 2px solid rgba(237, 2, 51, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include vp-1365 {
+      width: 72px;
+      height: 72px;
+    }
+  }
+}
+
+.about__play-btn svg {
+  color: $color-default-white;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 3px);
+  transform: translate(-50%, -50%);
+  z-index: 9;
+
+  @include vp-1365 {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.about__play-btn:hover,
+.about__play-btn:focus {
+  background: $color-default-white;
+}
+
+.about__play-btn:hover svg,
+.about__play-btn:focus svg {
+  color: $color-dark-primary;
+}
+
+.about__play-btn:hover::before {
+  border: 2px solid $color-dark-primary;
+}
+
+.about__play-btn:active {
+  width: 58px;
+  height: 58px;
+}
+
+.about__play-btn:disabled {
+  pointer-events: none;
+  background: $color-default-white;
+}
+
+.about__play-btn:disabled svg {
+  color: $color-dark-primary;
+  opacity: 0.4;
+}
+
+.about__play-btn:disabled::before {
+  border-color: rgba($color-dark-primary, 0.4);
+}

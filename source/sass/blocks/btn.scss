@@ -1,26 +1,140 @@
 .btn {
   display: inline-flex;
   padding: 10px 20px;
-
   color: $color-default-white;
-
-  background-color: $color-neon-blue;
+  background-color: $color-transparent;
   border: none;
   cursor: pointer;
-
   transition: opacity $trans-default;
+  user-select: none;
 
-  &--red {
-    background-color: $color-torch-red;
+  &--primary {
+    @include text(12px, 12px, $ff-bold);
+
+    background-color: $color-transparent;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+
+    @include vp-1365 {
+      font-weight: $ff-normal;
+    }
+
+    @include vp-767 {
+      font-weight: $ff-bold;
+    }
+  }
+
+  &--primary-ondark {
+    outline: 2px solid $color-default-white;
+    outline-offset: -2px;
+
+    @include hover {
+      outline: none;
+      background-color: $color-default-white;
+      color: $color-light-primary;
+    }
+
+    @include focus {
+      outline: none;
+      background-color: $color-default-white;
+      color: $color-light-primary;
+    }
+
+    @include active {
+      color: $color-dark-primary;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $color-default-white;
+      outline: 2px solid rgba($color-default-white, 0.5);
+    }
+  }
+
+  &--primary-onlight {
+    color: $color-dark-primary;
+
+    @include hover {
+      outline: none;
+      background: linear-gradient(97deg, #ed0233 17.6%, #003eb7 95.31%);
+      color: $color-default-white;
+    }
+
+    @include focus {
+      outline: none;
+      background: linear-gradient(97deg, #ed0233 17.6%, #003eb7 95.31%);
+      color: $color-default-white;
+    }
+
+    @include active {
+      outline: none;
+      background: linear-gradient(97deg, #ed0233 17.6%, #003eb7 95.31%);
+      color: rgba($color-default-white, 0.7);
+    }
+
+    &:disabled,
+    &.disabled {
+      color: rgba($color-dark-primary, 0.3);
+      outline: 2px solid rgba($color-dark-primary, 0.3);
+    }
   }
 
   &:disabled {
     opacity: 0.5;
-
     pointer-events: none;
   }
 
-  @include hover-focus {
-    opacity: 0.8;
+  &--block {
+    @include vp-767 {
+      display: block;
+      width: 100%;
+    }
   }
+
+  &--lined {
+    @include text(20px, 20px);
+
+    color: rgba($color-dark-primary, 0.5);
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    padding: 0 0 11px;
+
+    @include hover {
+      color: $color-dark-primary;
+      border-color: $color-red-tabs;
+    }
+
+    @include focus {
+      color: $color-dark-primary;
+      border-color: $color-red-tabs;
+    }
+
+    @include active {
+      color: $color-dark-primary;
+      border-color: $color-red-tabs;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: rgba($color-dark-primary, 0.3);
+      border-color: rgba($color-dark-primary, 0.3);
+    }
+
+    @include vp-1365 {
+      @include text(18px, 18px);
+
+      padding-bottom: 12px;
+    }
+
+    @include vp-767 {
+      @include text(16px, 16px);
+
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.btn--lined.is-active {
+  color: $color-dark-primary;
+  border-color: $color-red-tabs;
 }

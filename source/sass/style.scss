@@ -2,8 +2,9 @@
 // ---------------------------------
 
 @import "vendor/normalize";
+
 // Swiper 8.4.7
-// @import "vendor/swiper";
+@import "vendor/swiper";
 
 // Global
 // ---------------------------------
@@ -18,17 +19,25 @@
 // Blocks
 // ---------------------------------
 
+@import "blocks/data-tabs";
+@import "blocks/data-accordion";
 @import "blocks/btn";
-@import "blocks/modal";
-@import "blocks/custom-input";
-@import "blocks/custom-toggle";
-@import "blocks/custom-select";
+@import "blocks/header";
+@import "blocks/hero";
+@import "blocks/about";
+@import "blocks/price";
+@import "blocks/games";
+@import "blocks/jury-info";
+@import "blocks/features";
+@import "blocks/features-item";
+@import "blocks/offers";
+@import "blocks/faq";
+@import "blocks/reviews";
+@import "blocks/footer";
 
-// ---------------------------------
-
-// ❗❗❗ запрещено использовать изображения в css, касается как jpg \ png, так и svg
 
 // ❗ обязательно используйте mixin hover-focus для отключения ховеров на тач устройствах
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -41,13 +50,15 @@
     }
   }
 */
+
 /*  @include hover-focus {
       opacity: 0.8;
     }
 */
 // но не используем для текстовых полей ( input, textarea )
 // так же в сборке есть отдельный миксин для hover
-/*@mixin hover {
+
+/* @mixin hover {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
         @content;
@@ -56,14 +67,16 @@
   }
 */
 // для focus
-/*@mixin focus {
+
+/* @mixin focus {
     &.focus-visible:focus {
       @content;
     }
   }
 */
 // и для active
-/*@mixin active {
+
+/* @mixin active {
     &.focus-visible:active {
       @content;
     }

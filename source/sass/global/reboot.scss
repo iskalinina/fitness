@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -16,7 +17,7 @@ html {
   font-weight: 400;
   font-size: $fz-default;
   line-height: 24px;
-  font-family: $ff-placeholder;
+  font-family: $ff-roboto;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -30,7 +31,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-
+  scroll-behavior: smooth;
   background-color: $color-default-white;
 }
 
@@ -50,12 +51,6 @@ textarea {
   resize: none;
 }
 
-// chrome autofill background removal
-// если на проекте у инпутов используются разные цвета фонов\текста -
-// удалите это из глобала и используйте локально с нужными цветами
-// rgba не подойдет, сконвертируйте цвет в hex без прозрачности
-// если в стилях уже используется box-shadow есть другое решение -
-// задать к списку транзишенов `background-color 10000000s ease-out`
 input:-webkit-autofill {
   box-shadow: inset 0 0 0 1000px $color-default-white;
 
